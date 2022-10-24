@@ -165,9 +165,9 @@ PROPERTIES (property [,property]);
 | histogram_sample_ratio         | FLOAT    | 0.1        | 直方图采样比例。                                             |
 | histogram_max_sample_row_count | LONG     | 10000000   | 直方图最大采样行数。                                         |
 
-直方图的采样行数由多个参数共同控制，采样行数取`statistic_sample_collect_rows`和表总行数 * `histogram_sample_ratio` 两者中的最大值。最多不超过`histogram_max_sample_row_count`指定的行数。如果超过，则按照该参数定义的上限行数进行采集。
+直方图的采样行数由多个参数共同控制，采样行数取 `statistic_sample_collect_rows` 和表总行数 * `histogram_sample_ratio` 两者中的最大值。最多不超过 `histogram_max_sample_row_count` 指定的行数。如果超过，则按照该参数定义的上限行数进行采集。
 
-直方图任务实际执行中使用的**PROPERTIES**，可以通过 SHOW ANALYZE STATUS 中的**PROPERTIES**列查看。
+直方图任务实际执行中使用的 **PROPERTIES**，可以通过 SHOW ANALYZE STATUS 中的 **PROPERTIES** 列查看。
 
 **示例**
 
@@ -358,7 +358,7 @@ SHOW HISTOGRAM META [WHERE predicate];
 
 ## 删除统计信息
 
-StarRocks 支持手动删除统计信息。手动删除统计信息时，会删除统计信息数据和统计信息元数据，并且会删除过期内存中的统计信息缓存。需要注意的是，如果当前存在自动采集任务，可能会重新采集之前已删除的统计信息。您可以使用`SHOW ANALYZE STATUS`查看统计信息采集历史记录。
+StarRocks 支持手动删除统计信息。手动删除统计信息时，会删除统计信息数据和统计信息元数据，并且会删除过期内存中的统计信息缓存。需要注意的是，如果当前存在自动采集任务，可能会重新采集之前已删除的统计信息。您可以使用 `SHOW ANALYZE STATUS` 查看统计信息采集历史记录。
 
 ### 删除基础统计信息
 
